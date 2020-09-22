@@ -991,6 +991,12 @@ void SurgeSynthesizer::channelController(char channel, int cc, int value)
       ((ControllerModulationSource*)storage.getPatch().scene[1].modsources[ms_modwheel])
           ->set_target(fval);
       break;
+   case 2:
+      ((ControllerModulationSource*)storage.getPatch().scene[0].modsources[ms_aftertouch])
+          ->set_target(fval);
+      ((ControllerModulationSource*)storage.getPatch().scene[1].modsources[ms_aftertouch])
+          ->set_target(fval);
+      break;
    case 6:
       if (channelState[channel].nrpn_last)
       {
